@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Boutique - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="fav/site.webmanifest">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<section class="nav">
+    <div class="socials">
+        <a href="https://www.facebook.com/profile.php?id=100069447891074" target="_blank"><i class='bx bxl-facebook-circle bx-md bxh'></i></a>
+        <a href="https://twitter.com/IYenkosi99843" target="_blank"><i class='bx bxl-twitter bx-md bxh'></i></a>
+        <a href="https://www.instagram.com/inkwaliy735/" target="_blank"><i class='bx bxl-instagram bx-md bxh'></i></a>
+    </div>
+    <div class="logo"> 
+        <h2>Glamour</h2>
+        <a href="home.html"><img src="img/logo.png" alt=""></a>
+        <h2>Boutique</h2>
+    </div>
+</section>
+<div class="logo">
+    <h1>Welcome</h1>
+</div>
+<div class="login-container">
+    <form class="login-form" id="loginForm">
+        <input type="text" placeholder="Username" id="username" required>
+        <input type="password" placeholder="Password" id="password" required>
+        <input type="submit" value="Login">
+    </form>
+    <div class="signup-link">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+</div>
+
+<script src="login.js"></script>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the form from submitting the default way
+        window.location.href = 'file:///C:/Users/Yvvonne/OneDrive/Documents/Glamour%20Boutique/home.html'; // Redirects to the specified link
+    });
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glamour Boutique - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+    <link rel="manifest" href="fav/site.webmanifest">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<section class="nav">
+    <div class="socials">
+        <a href="" target="_blank"><i class='bx bxl-facebook-circle bx-md bxh'></i></a>
+        <a href="" target="_blank"><i class='bx bxl-twitter bx-md bxh'></i></a>
+        <a href="" target="_blank"><i class='bx bxl-instagram bx-md bxh'></i></a>
+    </div>
+    <div class="logo"> 
+        <h2>Glamour</h2>
+        <a href="home.html"><img src="img/logo.png" alt=""></a>
+        <h2>Boutique</h2>
+    </div>
+</section>
+<div class="logo">
+    <h1>Welcome</h1>
+</div>
+<div class="login-container">
+    <form class="login-form" id="loginForm">
+        <input type="text" placeholder="Username" id="username" required>
+        <input type="password" placeholder="Password" id="password" required>
+        <input type="submit" value="Login">
+    </form>
+    <div class="signup-link">
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+</div>
+
+<script src="login.js"></script>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the form from submitting the default way
+
+        // Retrieve stored users from localStorage
+        const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Check if user exists and password matches
+        const user = storedUsers.find(user => user.username === username && user.password === password);
+
+        if (user) {
+            // Redirect to home page if login is successful
+            window.location.href = 'file:///C:/Users/Yvvonne/OneDrive/Documents/Glamour%20Boutique/home.html';
+        } else {
+            // Alert user if login fails
+            alert('Invalid username or password. Please make sure you have signed up.');
+        }
+    });
+</script>
+<script src="js/controller.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
